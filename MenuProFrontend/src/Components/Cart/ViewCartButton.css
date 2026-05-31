@@ -1,0 +1,86 @@
+/* ================================================
+   VIEW CART FLOATING BUTTON – PREMIUM
+   ================================================ */
+
+.view-cart-btn {
+  position: fixed;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1500;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  background: linear-gradient(135deg, #e8603c, #f4a261);
+  color: #ffffff;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 999px;
+
+  font-size: 0.94rem;
+  font-weight: 800;
+  font-family: inherit;
+  cursor: pointer;
+  white-space: nowrap;
+
+  box-shadow:
+    0 8px 32px rgba(232, 96, 60, 0.38),
+    0 2px 8px rgba(100, 50, 20, 0.15);
+
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  animation: floatIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+@keyframes floatIn {
+  from { opacity: 0; transform: translateX(-50%) translateY(20px) scale(0.9); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0)     scale(1);   }
+}
+
+.view-cart-btn:hover {
+  transform: translateX(-50%) translateY(-3px) scale(1.04);
+  box-shadow:
+    0 14px 42px rgba(232, 96, 60, 0.48),
+    0 3px 10px rgba(100, 50, 20, 0.18);
+}
+
+.view-cart-btn:active {
+  transform: translateX(-50%) translateY(0) scale(0.97);
+}
+
+.view-cart-icon {
+  font-size: 1.1rem;
+}
+
+.view-cart-text {
+  font-size: 0.92rem;
+}
+
+.view-cart-badge {
+  background: rgba(255, 255, 255, 0.28);
+  border-radius: 999px;
+  padding: 2px 9px;
+  font-size: 0.78rem;
+  font-weight: 900;
+  min-width: 22px;
+  text-align: center;
+}
+
+.view-cart-divider {
+  opacity: 0.45;
+  font-size: 1rem;
+}
+
+.view-cart-total {
+  font-size: 1rem;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+}
+
+/* Pulse animation when item added */
+@keyframes pulse-cart {
+  0%   { box-shadow: 0 8px 32px rgba(232,96,60,0.38), 0 0 0 0 rgba(232,96,60,0.4); }
+  60%  { box-shadow: 0 8px 32px rgba(232,96,60,0.38), 0 0 0 12px rgba(232,96,60,0); }
+  100% { box-shadow: 0 8px 32px rgba(232,96,60,0.38), 0 0 0 0   rgba(232,96,60,0); }
+}

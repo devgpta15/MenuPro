@@ -1,0 +1,135 @@
+/* ================================================
+   MENUPRO – GLOBAL DESIGN TOKENS (SOFT THEME)
+   ================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  /* -------- Core Palette -------- */
+  --color-primary:        #e8603c;   /* warm terracotta */
+  --color-primary-light:  #f08060;
+  --color-primary-soft:   rgba(232, 96, 60, 0.12);
+  --color-secondary:      #f7c59f;   /* soft apricot */
+  --color-accent:         #c94b4b;   /* deep rose */
+  --color-success:        #52b788;
+  --color-warning:        #f4a261;
+  --color-danger:         #e76f51;
+  --color-info:           #6ea8d0;
+
+  /* -------- Background -------- */
+  --bg-page:              #fdf6ef;   /* warm cream */
+  --bg-surface:           #ffffff;
+  --bg-surface-2:         #fff8f3;   /* soft peach tint */
+  --bg-panel:             rgba(255,255,255,0.72);
+  --bg-panel-blur:        rgba(255, 248, 243, 0.85);
+
+  /* -------- Text -------- */
+  --text-heading:         #2d1b0e;   /* deep warm brown */
+  --text-normal:          #3d2b1f;
+  --text-muted:           #9a7a6a;
+  --text-placeholder:     #c5a898;
+  --text-on-accent:       #ffffff;
+
+  /* -------- Border & Divider -------- */
+  --border-soft:          rgba(232, 96, 60, 0.12);
+  --border-medium:        rgba(232, 96, 60, 0.22);
+  --border-strong:        rgba(232, 96, 60, 0.40);
+
+  /* -------- Typography -------- */
+  --font-base:            'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-size-xs:         0.72rem;
+  --font-size-sm:         0.875rem;
+  --font-size-md:         1rem;
+  --font-size-lg:         1.125rem;
+  --font-size-xl:         1.35rem;
+  --font-size-2xl:        1.75rem;
+  --font-size-3xl:        2.5rem;
+
+  /* -------- Spacing -------- */
+  --space-xxs: 0.25rem;
+  --space-xs:  0.5rem;
+  --space-sm:  0.75rem;
+  --space-md:  1rem;
+  --space-lg:  1.5rem;
+  --space-xl:  2rem;
+  --space-2xl: 3rem;
+
+  /* -------- Border Radius -------- */
+  --radius-sm:   6px;
+  --radius-md:   12px;
+  --radius-lg:   18px;
+  --radius-xl:   24px;
+  --radius-full: 9999px;
+
+  /* -------- Shadows -------- */
+  --shadow-xs:  0 1px 3px rgba(100,50,20,0.06);
+  --shadow-sm:  0 2px 8px rgba(100,50,20,0.08);
+  --shadow-md:  0 6px 24px rgba(100,50,20,0.10);
+  --shadow-lg:  0 16px 48px rgba(100,50,20,0.14);
+  --shadow-xl:  0 28px 64px rgba(100,50,20,0.18);
+  --shadow-glow:0 0 30px rgba(232, 96, 60, 0.20);
+
+  /* -------- Transitions -------- */
+  --transition-fast:   0.18s cubic-bezier(0.34, 1.56, 0.64, 1);
+  --transition-normal: 0.30s cubic-bezier(0.34, 1.56, 0.64, 1);
+  --transition-slow:   0.50s cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* -------- Gradients -------- */
+  --gradient-primary:  linear-gradient(135deg, #e8603c, #f4a261);
+  --gradient-warm:     linear-gradient(135deg, #fdf6ef, #fff0e6);
+  --gradient-card:     linear-gradient(145deg, rgba(255,255,255,0.9), rgba(255,248,243,0.95));
+  --gradient-hero:     linear-gradient(135deg, #fdf0e8 0%, #ffe8d6 50%, #ffd6b8 100%);
+
+  /* -------- Status Colors -------- */
+  --status-confirmed-bg:  rgba(82, 183, 136, 0.12);
+  --status-confirmed-txt: #2d7a5e;
+  --status-pending-bg:    rgba(244, 162, 97, 0.15);
+  --status-pending-txt:   #b5621c;
+  --status-cancelled-bg:  rgba(231, 111, 81, 0.12);
+  --status-cancelled-txt: #b84024;
+
+  /* -------- Layout -------- */
+  --container-width:   1200px;
+  --container-padding: 1.25rem;
+  --navbar-height:     68px;
+}
+
+/* ================================================
+   TABLET
+   ================================================ */
+@media (max-width: 1024px) {
+  :root {
+    --font-size-md:    0.95rem;
+    --font-size-lg:    1.05rem;
+    --space-lg:        1.25rem;
+    --space-xl:        1.75rem;
+    --container-padding: 1rem;
+  }
+}
+
+/* ================================================
+   MOBILE
+   ================================================ */
+@media (max-width: 768px) {
+  :root {
+    --font-size-sm:  0.85rem;
+    --font-size-md:  0.9rem;
+    --font-size-lg:  1rem;
+    --font-size-xl:  1.1rem;
+    --space-md:      0.75rem;
+    --space-lg:      1rem;
+    --space-xl:      1.25rem;
+    --container-padding: 0.875rem;
+  }
+}
+
+/* ================================================
+   SMALL MOBILE
+   ================================================ */
+@media (max-width: 480px) {
+  :root {
+    --container-padding: 0.75rem;
+    --radius-md: 10px;
+    --radius-lg: 14px;
+  }
+}

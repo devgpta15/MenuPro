@@ -1,0 +1,102 @@
+/* ================================================
+   ADMIN LAYOUT – SOFT INTERACTIVE THEME
+   ================================================ */
+
+:root {
+  --bg-page:        #fdf6ef;
+  --bg-panel:       #ffffff;
+  --bg-panel-soft:  rgba(255, 248, 243, 0.95);
+
+  --text-primary:   #e8603c;
+  --text-normal:    #3d2b1f;
+  --text-muted:     #9a7a6a;
+
+  --accent-primary: #e8603c;
+  --accent-warm:    #f4a261;
+
+  --shadow-soft:    0 8px 32px rgba(100, 50, 20, 0.10);
+  --shadow-glow:    0 0 24px rgba(232, 96, 60, 0.18);
+}
+
+/* ================================================
+   LAYOUT
+   ================================================ */
+.admin-layout {
+  display: flex;
+  min-height: 100vh;
+  background: var(--bg-page);
+  color: var(--text-normal);
+  font-family: 'Plus Jakarta Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ================================================
+   SIDEBAR
+   ================================================ */
+.admin-sidebar {
+  width: 232px;
+  background: var(--bg-panel);
+  padding: 28px 16px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 4px 0 24px rgba(100, 50, 20, 0.07);
+  border-right: 1px solid rgba(232, 96, 60, 0.08);
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.admin-sidebar h2 {
+  margin-bottom: 28px;
+  text-align: center;
+  font-size: 1.15rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #e8603c, #f4a261);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* LINKS */
+.admin-sidebar a {
+  color: var(--text-muted);
+  text-decoration: none;
+  margin: 4px 0;
+  padding: 11px 14px;
+  border-radius: 12px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all 0.22s cubic-bezier(0.34, 1.56, 0.64, 1);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.admin-sidebar a:hover {
+  background: rgba(232, 96, 60, 0.08);
+  color: var(--accent-primary);
+  transform: translateX(3px);
+}
+
+.admin-sidebar a.active {
+  background: linear-gradient(135deg, rgba(232, 96, 60, 0.12), rgba(244, 162, 97, 0.10));
+  color: var(--accent-primary);
+  font-weight: 700;
+  border: 1px solid rgba(232, 96, 60, 0.15);
+}
+
+/* ================================================
+   CONTENT
+   ================================================ */
+.admin-content {
+  flex: 1;
+  padding: 32px;
+  background: var(--bg-page);
+  overflow-y: auto;
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}

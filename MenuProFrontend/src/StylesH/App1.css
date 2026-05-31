@@ -1,0 +1,23 @@
+/* ================================================
+   APP1.CSS – APP CONTAINER (SOFT THEME)
+   ================================================ */
+
+html, body {
+  height: 100%;
+  margin: 0;
+  background-color: #fdf6ef !important;
+  color: #3d2b1f;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #fdf6ef !important;
+}
+
+.content {
+  flex: 1;
+  background-color: #fdf6ef !important;
+}

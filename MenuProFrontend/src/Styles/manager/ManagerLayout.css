@@ -1,0 +1,36 @@
+/* ================================================
+   MANAGER LAYOUT – SOFT INTERACTIVE THEME
+   ================================================ */
+
+:root {
+  --bg-page:        #fdf6ef;
+  --bg-panel:       #ffffff;
+
+  --text-primary:   #e8603c;
+  --text-normal:    #3d2b1f;
+  --text-muted:     #9a7a6a;
+
+  --accent-primary: #e8603c;
+  --accent-warm:    #f4a261;
+}
+
+/* ================================================
+   MANAGER LAYOUT
+   ================================================ */
+.manager-layout {
+  display: flex;
+  height: 100vh;
+  background: var(--bg-page);
+  overflow: hidden;
+}
+
+/* ================================================
+   MANAGER CONTENT
+   ================================================ */
+.manager-content {
+  flex: 1;
+  padding: 28px;
+  background: var(--bg-page);
+  overflow-y: auto;
+  color: var(--text-normal);
+}

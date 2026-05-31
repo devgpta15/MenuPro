@@ -1,0 +1,151 @@
+/* ================================================
+   MANAGER SIDEBAR – SOFT INTERACTIVE THEME
+   ================================================ */
+
+:root {
+  --bg-page:        #fdf6ef;
+  --bg-panel:       #ffffff;
+  --bg-panel-soft:  rgba(255, 248, 243, 0.95);
+
+  --text-primary:   #e8603c;
+  --text-normal:    #3d2b1f;
+  --text-muted:     #9a7a6a;
+
+  --accent-primary: #e8603c;
+  --accent-warm:    #f4a261;
+
+  --shadow-soft:    0 8px 32px rgba(100, 50, 20, 0.10);
+  --shadow-glow:    0 0 24px rgba(232, 96, 60, 0.18);
+}
+
+/* ================================================
+   SIDEBAR
+   ================================================ */
+.sidebar {
+  width: 248px;
+  height: 100vh;
+  background: var(--bg-panel);
+  color: var(--text-normal);
+  padding: 20px 14px;
+  transition: width 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 4px 0 24px rgba(100, 50, 20, 0.07);
+  border-right: 1px solid rgba(232, 96, 60, 0.08);
+  position: sticky;
+  top: 0;
+}
+
+.sidebar.collapsed {
+  width: 72px;
+}
+
+/* ================================================
+   HEADER
+   ================================================ */
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 32px;
+  padding: 0 4px;
+}
+
+.sidebar-header h2 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #e8603c, #f4a261);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  white-space: nowrap;
+}
+
+/* ================================================
+   TOGGLE BUTTON
+   ================================================ */
+.toggle-btn {
+  background: rgba(232, 96, 60, 0.08);
+  border: none;
+  color: var(--accent-primary);
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.22s cubic-bezier(0.34, 1.56, 0.64, 1);
+  flex-shrink: 0;
+}
+
+.toggle-btn:hover {
+  background: rgba(232, 96, 60, 0.15);
+  transform: scale(1.1);
+}
+
+/* ================================================
+   MENU
+   ================================================ */
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+}
+
+.sidebar-menu li {
+  margin-bottom: 6px;
+}
+
+.sidebar-menu a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 14px;
+  border-radius: 12px;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 500;
+  transition: all 0.22s cubic-bezier(0.34, 1.56, 0.64, 1);
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.sidebar-menu a:hover {
+  background: rgba(232, 96, 60, 0.08);
+  color: var(--accent-primary);
+  transform: translateX(3px);
+}
+
+.sidebar-menu a.active,
+.sidebar-menu a[aria-current="page"] {
+  background: linear-gradient(135deg, rgba(232, 96, 60, 0.12), rgba(244, 162, 97, 0.10));
+  color: var(--accent-primary);
+  font-weight: 700;
+  border: 1px solid rgba(232, 96, 60, 0.15);
+}
+
+/* Icon */
+.sidebar-menu a .menu-icon {
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+/* ================================================
+   COLLAPSED
+   ================================================ */
+.sidebar.collapsed .sidebar-menu a {
+  justify-content: center;
+  padding: 11px;
+}
+
+.sidebar.collapsed .sidebar-menu a span:not(.menu-icon) {
+  display: none;
+}
+
+.sidebar.collapsed .sidebar-header h2 {
+  display: none;
+}

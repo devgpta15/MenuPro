@@ -1,0 +1,202 @@
+/* ================================================
+   RESTAURANT CARD – SOFT INTERACTIVE THEME
+   ================================================ */
+
+:root {
+  --bg-page:          #fdf6ef;
+  --bg-panel:         rgba(255, 255, 255, 0.90);
+  --bg-panel-soft:    rgba(255, 248, 243, 0.95);
+
+  --text-primary:     #e8603c;
+  --text-normal:      #3d2b1f;
+  --text-muted:       #9a7a6a;
+
+  --accent-primary:   #e8603c;
+  --accent-warm:      #f4a261;
+  --accent-rating:    #f4a261;
+
+  --shadow-soft:      0 8px 32px rgba(100, 50, 20, 0.10);
+  --shadow-glow:      0 12px 36px rgba(232, 96, 60, 0.20);
+}
+
+/* ================================================
+   CARD
+   ================================================ */
+.restaurant-card {
+  background: var(--bg-panel);
+  backdrop-filter: blur(14px) saturate(150%);
+  -webkit-backdrop-filter: blur(14px) saturate(150%);
+  border: 1px solid rgba(232, 96, 60, 0.10);
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(100, 50, 20, 0.08);
+  transition:
+    transform 0.36s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.36s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  will-change: transform;
+  animation: fadeInUp 0.5s ease both;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+/* Staggered card animations */
+.restaurant-card:nth-child(1) { animation-delay: 0.05s; }
+.restaurant-card:nth-child(2) { animation-delay: 0.10s; }
+.restaurant-card:nth-child(3) { animation-delay: 0.15s; }
+.restaurant-card:nth-child(4) { animation-delay: 0.20s; }
+.restaurant-card:nth-child(5) { animation-delay: 0.25s; }
+.restaurant-card:nth-child(6) { animation-delay: 0.30s; }
+.restaurant-card:nth-child(7) { animation-delay: 0.35s; }
+.restaurant-card:nth-child(8) { animation-delay: 0.40s; }
+
+/* Hover lift */
+.restaurant-card:hover {
+  transform: scale(1.03) translateY(-8px);
+  border-color: rgba(232, 96, 60, 0.30);
+  box-shadow: 0 20px 50px rgba(100, 50, 20, 0.14), var(--shadow-glow);
+}
+
+/* ================================================
+   IMAGE
+   ================================================ */
+.restaurant-image {
+  position: relative;
+  height: 180px;
+  overflow: hidden;
+}
+
+.restaurant-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.restaurant-card:hover .restaurant-image img {
+  transform: scale(1.10);
+}
+
+/* Gradient overlay */
+.restaurant-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    transparent 55%,
+    rgba(61, 43, 31, 0.20) 100%
+  );
+  pointer-events: none;
+}
+
+/* ================================================
+   STATUS BADGE
+   ================================================ */
+.status-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 4px 12px;
+  font-size: 10px;
+  border-radius: 999px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 2;
+}
+
+.status-badge.active {
+  color: #2d7a5e;
+  background: rgba(82, 183, 136, 0.20);
+  border: 1px solid rgba(82, 183, 136, 0.40);
+}
+
+.status-badge.inactive {
+  color: #b84024;
+  background: rgba(231, 111, 81, 0.15);
+  border: 1px solid rgba(231, 111, 81, 0.35);
+}
+
+/* ================================================
+   CONTENT
+   ================================================ */
+.restaurant-content {
+  padding: 20px;
+}
+
+.restaurant-name {
+  color: var(--text-normal);
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 0 0 6px;
+  transition: color 0.2s ease;
+}
+
+.restaurant-card:hover .restaurant-name {
+  color: var(--accent-primary);
+}
+
+.restaurant-location {
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* ================================================
+   FOOTER
+   ================================================ */
+.restaurant-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(232, 96, 60, 0.08);
+  padding-top: 14px;
+  margin-top: 8px;
+}
+
+.restaurant-rating {
+  color: var(--accent-rating);
+  font-weight: 700;
+  font-size: 0.82rem;
+  background: rgba(244, 162, 97, 0.12);
+  padding: 4px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(244, 162, 97, 0.25);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* ================================================
+   VIEW BUTTON
+   ================================================ */
+.view-btn {
+  background: transparent;
+  border: 1.5px solid rgba(232, 96, 60, 0.35);
+  color: var(--accent-primary);
+  padding: 7px 16px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.view-btn:hover {
+  background: linear-gradient(135deg, #e8603c, #f4a261);
+  color: #ffffff;
+  border-color: transparent;
+  transform: scale(1.06);
+  box-shadow: 0 6px 20px rgba(232, 96, 60, 0.30);
+}

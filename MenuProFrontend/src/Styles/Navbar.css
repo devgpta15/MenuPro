@@ -1,0 +1,315 @@
+/* ================================================
+   NAVBAR – SOFT INTERACTIVE THEME
+   ================================================ */
+
+:root {
+  --bg-page:          #fdf6ef;
+  --bg-panel:         rgba(255, 255, 255, 0.82);
+  --bg-panel-soft:    rgba(255, 248, 243, 0.95);
+
+  --text-primary:     #e8603c;
+  --text-normal:      #3d2b1f;
+  --text-muted:       #9a7a6a;
+
+  --accent-primary:   #e8603c;
+  --accent-warm:      #f4a261;
+  --accent-rating:    #f4a261;
+
+  --shadow-soft:      0 8px 32px rgba(100, 50, 20, 0.10);
+  --shadow-glow:      0 0 24px rgba(232, 96, 60, 0.18);
+
+  --transition-normal: 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ================================================
+   NAVBAR BASE
+   ================================================ */
+.navbar {
+  background: var(--bg-panel) !important;
+  backdrop-filter: blur(20px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+  border-bottom: 1px solid rgba(232, 96, 60, 0.12) !important;
+  box-shadow: 0 4px 24px rgba(100, 50, 20, 0.08) !important;
+  position: sticky !important;
+  top: 0;
+  z-index: 1000;
+  padding: 10px 0 !important;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.navbar .container-fluid {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.navbar-menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  flex: 1;
+  min-width: 0;
+}
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+}
+
+/* ================================================
+   BRAND
+   ================================================ */
+.navbar-brand {
+  font-weight: 800 !important;
+  font-size: 1.45rem !important;
+  letter-spacing: -0.5px !important;
+  background: linear-gradient(135deg, #e8603c, #f4a261) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  transition: all 0.3s ease !important;
+  filter: drop-shadow(0 2px 6px rgba(232, 96, 60, 0.18)) !important;
+  text-decoration: none !important;
+}
+
+.navbar-brand:hover {
+  transform: scale(1.04) !important;
+  filter: drop-shadow(0 2px 14px rgba(232, 96, 60, 0.35)) !important;
+}
+
+/* ================================================
+   NAV LINKS
+   ================================================ */
+.navbar-nav .nav-link {
+  color: var(--text-muted) !important;
+  margin: 0 4px !important;
+  position: relative;
+  font-weight: 600 !important;
+  font-size: 0.9rem !important;
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+  padding: 7px 14px !important;
+  border-radius: 10px !important;
+}
+
+.navbar-nav .nav-link:hover {
+  color: var(--accent-primary) !important;
+  background: rgba(232, 96, 60, 0.08) !important;
+  transform: translateY(-1px) !important;
+}
+
+/* Animated underline */
+.navbar-nav .nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 50%;
+  bottom: 4px;
+  background: linear-gradient(90deg, #e8603c, #f4a261);
+  border-radius: 4px;
+  transform: translateX(-50%);
+  transition: width 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.navbar-nav .nav-link:hover::after {
+  width: 50%;
+}
+
+/* Active link */
+.navbar-nav .nav-link.active {
+  color: var(--accent-primary) !important;
+  font-weight: 700 !important;
+  background: rgba(232, 96, 60, 0.10) !important;
+}
+
+.navbar-nav .nav-link.active::after {
+  width: 50%;
+}
+
+/* ================================================
+   DROPDOWN
+   ================================================ */
+.dropdown-menu {
+  background: var(--bg-panel-soft);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(232, 96, 60, 0.12);
+  box-shadow: 0 10px 40px rgba(100, 50, 20, 0.14);
+  border-radius: 14px;
+  padding: 8px;
+  animation: scaleIn 0.18s ease;
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.95) translateY(-8px); }
+  to   { opacity: 1; transform: scale(1)    translateY(0);     }
+}
+
+.dropdown-item {
+  color: var(--text-muted);
+  font-weight: 500;
+  border-radius: 10px;
+  padding: 9px 16px;
+  transition: all 0.2s ease;
+}
+
+.dropdown-item:hover {
+  background: rgba(232, 96, 60, 0.10);
+  color: var(--accent-primary);
+  transform: translateX(3px);
+}
+
+.dropdown-divider {
+  border-color: rgba(232, 96, 60, 0.10);
+}
+
+/* ================================================
+   SEARCH / FORM
+   ================================================ */
+.form-control {
+  background: rgba(232, 96, 60, 0.05);
+  color: var(--text-normal);
+  border: 1px solid rgba(232, 96, 60, 0.15);
+  border-radius: 12px;
+  padding: 8px 16px;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.form-control::placeholder {
+  color: var(--text-muted);
+}
+
+.form-control:focus {
+  background: #ffffff;
+  color: var(--text-normal);
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px rgba(232, 96, 60, 0.15);
+  outline: none;
+}
+
+.btn-outline-success {
+  color: var(--accent-primary);
+  border-color: var(--accent-primary);
+  border-radius: 12px;
+  padding: 8px 18px;
+  font-weight: 600;
+  background: transparent;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.btn-outline-success:hover {
+  background: var(--accent-primary);
+  color: #ffffff;
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-2px);
+}
+
+/* ================================================
+   MOBILE TOGGLER
+   ================================================ */
+.navbar-toggler {
+  border: 1.5px solid rgba(232, 96, 60, 0.25);
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+
+.navbar-toggler:hover {
+  background: rgba(232, 96, 60, 0.08);
+}
+
+.navbar-toggler-icon {
+  filter: brightness(0.4) sepia(1) saturate(5) hue-rotate(345deg);
+}
+
+/* ================================================
+   AUTH BUTTON
+   ================================================ */
+.auth-btn {
+  background: linear-gradient(135deg, #e8603c, #f4a261);
+  color: #ffffff !important;
+  border: none;
+  font-weight: 700;
+  font-size: 0.88rem;
+  padding: 9px 26px;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(232, 96, 60, 0.25);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  letter-spacing: 0.01em;
+}
+
+.auth-btn:hover {
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 8px 28px rgba(232, 96, 60, 0.38);
+}
+
+.auth-btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+@media (max-width: 991px) {
+  .navbar {
+    padding: 8px 0 !important;
+  }
+
+  .navbar .container-fluid {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .navbar-brand {
+    font-size: 1.25rem !important;
+    line-height: 38px;
+  }
+
+  .navbar-menu {
+    order: 3;
+    width: 100%;
+    flex-basis: 100%;
+    align-items: center;
+  }
+
+  .navbar-nav .nav-link {
+    padding: 7px 10px !important;
+    font-size: 0.84rem !important;
+  }
+
+  .auth-btn,
+  .profile-wrapper {
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 560px) {
+  .navbar .container-fluid {
+    align-items: center;
+  }
+
+  .navbar-menu {
+    gap: 10px;
+  }
+
+  .navbar-nav {
+    flex: 1;
+  }
+
+  .navbar-nav .nav-link {
+    margin: 0 !important;
+    padding: 7px 8px !important;
+  }
+
+  .auth-btn {
+    padding: 9px 16px;
+    border-radius: 11px;
+    font-size: 0.82rem;
+    white-space: nowrap;
+  }
+}

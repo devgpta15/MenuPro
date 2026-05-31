@@ -1,0 +1,132 @@
+/* ================================================
+   REGISTER MODAL – SOFT INTERACTIVE THEME
+   ================================================ */
+
+:root {
+  --bg-page:        #fdf6ef;
+  --bg-panel:       #ffffff;
+
+  --text-primary:   #e8603c;
+  --text-normal:    #3d2b1f;
+  --text-muted:     #9a7a6a;
+
+  --accent-primary: #e8603c;
+  --accent-warm:    #f4a261;
+  --accent-rating:  #f4a261;
+
+  --shadow-soft:    0 20px 60px rgba(100, 50, 20, 0.16);
+  --shadow-glow:    0 0 28px rgba(232, 96, 60, 0.20);
+}
+
+/* ================================================
+   SELECT (ROLE DROPDOWN)
+   ================================================ */
+.login-select {
+  width: 100%;
+  margin-bottom: 18px;
+  padding: 13px 16px;
+  background: #fdf6ef;
+  border: 1.5px solid rgba(232, 96, 60, 0.18);
+  border-radius: 12px;
+  color: var(--text-normal);
+  font-size: 0.92rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%239a7a6a' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  box-sizing: border-box;
+}
+
+.login-select option {
+  background: #ffffff;
+  color: var(--text-normal);
+}
+
+.login-select:focus {
+  outline: none;
+  background-color: #ffffff;
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px rgba(232, 96, 60, 0.14);
+}
+
+/* ================================================
+   CLOSE BUTTON
+   ================================================ */
+.close-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(232, 96, 60, 0.08);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  cursor: pointer;
+  color: var(--text-muted);
+  font-weight: 700;
+  transition: all 0.22s cubic-bezier(0.34, 1.56, 0.64, 1);
+  line-height: 1;
+}
+
+.close-btn:hover {
+  background: rgba(232, 96, 60, 0.15);
+  color: var(--accent-primary);
+  transform: scale(1.12) rotate(90deg);
+}
+
+/* ================================================
+   REGISTER BUTTON
+   ================================================ */
+.register-btn {
+  width: 100%;
+  padding: 14px;
+  margin-top: 8px;
+  background: linear-gradient(135deg, #e8603c, #f4a261);
+  border: none;
+  color: #ffffff;
+  font-size: 0.96rem;
+  font-weight: 700;
+  border-radius: 13px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 6px 20px rgba(232, 96, 60, 0.25);
+}
+
+.register-btn:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 10px 30px rgba(232, 96, 60, 0.38);
+}
+
+.register-btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* ================================================
+   FOOTER
+   ================================================ */
+.modal-footer {
+  margin-top: 28px;
+  text-align: center;
+  font-size: 0.83rem;
+  color: var(--text-muted);
+}
+
+.login-link {
+  display: block;
+  margin-top: 10px;
+  color: var(--accent-primary);
+  cursor: pointer;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.login-link:hover {
+  color: #c94b4b;
+  text-decoration: underline;
+}

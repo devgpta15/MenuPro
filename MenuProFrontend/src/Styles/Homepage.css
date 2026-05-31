@@ -1,0 +1,256 @@
+/* ================================================
+   HOMEPAGE – SOFT INTERACTIVE THEME
+   ================================================ */
+
+:root {
+  --bg-page:        #fdf6ef;
+  --bg-panel:       #ffffff;
+  --bg-panel-soft:  rgba(255, 248, 243, 0.9);
+
+  --text-primary:   #e8603c;
+  --text-normal:    #3d2b1f;
+  --text-muted:     #9a7a6a;
+
+  --accent-primary: #e8603c;
+  --accent-warm:    #f4a261;
+  --accent-rating:  #f4a261;
+
+  --shadow-soft:    0 12px 40px rgba(100, 50, 20, 0.10);
+  --shadow-glow:    0 0 28px rgba(232, 96, 60, 0.18);
+}
+
+/* ================================================
+   PAGE WRAPPER
+   ================================================ */
+.homepage {
+  padding: 32px 44px;
+  background: var(--bg-page);
+  min-height: 100vh;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ================================================
+   HERO SECTION
+   ================================================ */
+.top_part {
+  width: 100%;
+  height: 420px;
+  background: linear-gradient(135deg, #fdf0e8 0%, #ffe5cc 50%, #ffd6b2 100%);
+  border-radius: 28px;
+  margin-bottom: 48px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border: 1px solid rgba(232, 96, 60, 0.12);
+  box-shadow: 0 20px 60px rgba(100, 50, 20, 0.10);
+}
+
+/* Decorative blobs */
+.top_part::before {
+  content: '';
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(232, 96, 60, 0.10) 0%, transparent 70%);
+  top: -100px;
+  right: -80px;
+  pointer-events: none;
+}
+
+.top_part::after {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(244, 162, 97, 0.12) 0%, transparent 70%);
+  bottom: -80px;
+  left: -60px;
+  pointer-events: none;
+}
+
+/* Floating food emojis decoration */
+.top_part .deco-emoji {
+  position: absolute;
+  font-size: 2.5rem;
+  opacity: 0.22;
+  pointer-events: none;
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(-8deg); }
+  50%       { transform: translateY(-14px) rotate(8deg); }
+}
+
+/* ================================================
+   HERO TITLE
+   ================================================ */
+.title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 2;
+  animation: fadeInUp 0.7s ease both;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+.title2 {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  letter-spacing: 3px;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.title1 {
+  font-size: 5.2rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #e8603c, #f4a261);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-top: 8px;
+  margin-bottom: 0;
+  letter-spacing: -2px;
+  filter: drop-shadow(0 4px 14px rgba(232, 96, 60, 0.22));
+  line-height: 1;
+}
+
+/* Hero tagline */
+.hero-tagline {
+  margin-top: 18px;
+  font-size: 1rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  z-index: 2;
+  opacity: 0;
+  animation: fadeInUp 0.7s ease 0.25s both;
+}
+
+/* ================================================
+   SECTION TITLE
+   ================================================ */
+.homepage-title {
+  font-size: 1.7rem;
+  font-weight: 700;
+  margin-bottom: 28px;
+  color: var(--text-normal);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.homepage-title::after {
+  content: '';
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(232, 96, 60, 0.30), transparent);
+  border-radius: 2px;
+}
+
+/* ================================================
+   RESTAURANT GRID
+   ================================================ */
+.restaurant-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(268px, 1fr));
+  gap: 28px;
+}
+
+/* ================================================
+   LOADING STATE
+   ================================================ */
+.loading-text {
+  text-align: center;
+  margin-top: 120px;
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  animation: fadeIn 0.5s ease;
+}
+
+/* ================================================
+   MOBILE
+   ================================================ */
+@media (max-width: 576px) {
+  .homepage {
+    padding: 16px;
+  }
+
+  .top_part {
+    height: 240px;
+    border-radius: 20px;
+    margin-bottom: 28px;
+  }
+
+  .title1 {
+    font-size: 3.2rem;
+    letter-spacing: -1px;
+  }
+
+  .title2 {
+    font-size: 1rem;
+    letter-spacing: 2px;
+  }
+
+  .homepage-title {
+    font-size: 1.25rem;
+    text-align: center;
+  }
+
+  .restaurant-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+/* ================================================
+   TABLET
+   ================================================ */
+@media (min-width: 577px) and (max-width: 991px) {
+  .homepage {
+    padding: 22px;
+  }
+
+  .top_part {
+    height: 320px;
+  }
+
+  .title1 {
+    font-size: 4rem;
+  }
+
+  .homepage-title {
+    font-size: 1.4rem;
+  }
+
+  .restaurant-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+/* ================================================
+   LARGE SCREENS
+   ================================================ */
+@media (min-width: 1200px) {
+  .restaurant-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

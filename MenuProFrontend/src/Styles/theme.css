@@ -1,0 +1,34 @@
+/* ================================================
+   THEME.CSS – UNIFIED SOFT THEME OVERRIDES
+   ================================================ */
+
+:root {
+  /* Brand Colors – Soft Warm Terracotta */
+  --primary:          #e8603c;
+  --primary-light:    #f08060;
+  --primary-hover:    #c94b4b;
+  --primary-soft:     rgba(232, 96, 60, 0.10);
+
+  /* Text */
+  --secondary:        #2d1b0e;
+  --secondary-light:  #9a7a6a;
+
+  /* Backgrounds */
+  --bg-main:          #fdf6ef;
+  --bg-card:          #ffffff;
+  --bg-muted:         #fff8f3;
+
+  /* Status */
+  --success:          #52b788;
+  --warning:          #f4a261;
+  --danger:           #e76f51;
+
+  /* Borders & Shadows */
+  --border:           rgba(232, 96, 60, 0.12);
+  --shadow:           0 4px 18px rgba(100, 50, 20, 0.08);
+
+  /* Radius */
+  --radius-sm:        8px;
+  --radius-md:        13px;
+  --radius-lg:        20px;
+}

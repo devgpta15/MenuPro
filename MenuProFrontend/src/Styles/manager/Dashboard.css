@@ -1,0 +1,207 @@
+/* ================================================
+   MANAGER DASHBOARD – SOFT INTERACTIVE THEME
+   ================================================ */
+
+:root {
+  --bg-page:        #fdf6ef;
+  --bg-panel:       #ffffff;
+  --bg-panel-soft:  rgba(255, 248, 243, 0.92);
+
+  --text-primary:   #e8603c;
+  --text-normal:    #3d2b1f;
+  --text-muted:     #9a7a6a;
+
+  --accent-primary: #e8603c;
+  --accent-warm:    #f4a261;
+  --accent-rating:  #f4a261;
+
+  --shadow-soft:    0 12px 40px rgba(100, 50, 20, 0.10);
+  --shadow-glow:    0 0 28px rgba(232, 96, 60, 0.18);
+}
+
+/* ================================================
+   PAGE
+   ================================================ */
+.manager-dashboard {
+  padding: 28px;
+  background: var(--bg-page);
+  min-height: 100vh;
+  font-family: 'Plus Jakarta Sans', 'Segoe UI', sans-serif;
+  color: var(--text-normal);
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ================================================
+   HEADER
+   ================================================ */
+.dashboard-header h1 {
+  font-size: 1.8rem;
+  margin-bottom: 4px;
+  color: var(--text-normal);
+}
+
+.dashboard-header p {
+  color: var(--text-muted);
+  margin-bottom: 28px;
+  font-size: 0.9rem;
+}
+
+/* ================================================
+   KPI CARDS
+   ================================================ */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+.kpi-card {
+  background: var(--bg-panel);
+  padding: 22px 20px;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 4px 18px rgba(100, 50, 20, 0.07);
+  border: 1px solid rgba(232, 96, 60, 0.08);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  animation: fadeInUp 0.5s ease both;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+.kpi-card:nth-child(1) { animation-delay: 0.05s; }
+.kpi-card:nth-child(2) { animation-delay: 0.10s; }
+.kpi-card:nth-child(3) { animation-delay: 0.15s; }
+.kpi-card:nth-child(4) { animation-delay: 0.20s; }
+
+.kpi-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #e8603c, #f4a261);
+  border-radius: 18px 18px 0 0;
+}
+
+.kpi-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 36px rgba(100, 50, 20, 0.12);
+}
+
+.kpi-card h3 {
+  font-size: 1.9rem;
+  color: var(--accent-primary);
+  font-weight: 800;
+  margin: 6px 0 8px;
+}
+
+.kpi-card p {
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  font-weight: 500;
+}
+
+/* ================================================
+   MAIN GRID
+   ================================================ */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 22px;
+}
+
+.dashboard-card {
+  background: var(--bg-panel);
+  padding: 22px;
+  border-radius: 18px;
+  box-shadow: 0 4px 18px rgba(100, 50, 20, 0.07);
+  border: 1px solid rgba(232, 96, 60, 0.08);
+  animation: fadeIn 0.5s ease both;
+}
+
+.dashboard-card h2 {
+  margin-bottom: 16px;
+  font-size: 1rem;
+  color: var(--text-normal);
+  font-weight: 700;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(232, 96, 60, 0.08);
+}
+
+/* ================================================
+   LISTS
+   ================================================ */
+.status-list,
+.simple-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.status-list li,
+.simple-list li {
+  margin-bottom: 12px;
+  font-size: 0.9rem;
+  color: var(--text-normal);
+  padding: 9px 12px;
+  border-radius: 10px;
+  background: #fdf6ef;
+  border: 1px solid rgba(232, 96, 60, 0.06);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.2s ease;
+}
+
+.status-list li:hover,
+.simple-list li:hover {
+  background: rgba(232, 96, 60, 0.05);
+}
+
+/* ================================================
+   WEEKLY REVENUE
+   ================================================ */
+.full-width {
+  grid-column: 1 / -1;
+  margin-top: 4px;
+}
+
+.revenue-bar {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  height: 160px;
+  margin-top: 20px;
+}
+
+.revenue-bar span {
+  flex: 1;
+  background: linear-gradient(180deg, #e8603c, #f4a261);
+  border-radius: 8px 8px 0 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding-bottom: 6px;
+  box-shadow: 0 4px 12px rgba(232, 96, 60, 0.22);
+  transition: opacity 0.2s ease;
+  min-height: 20px;
+}
+
+.revenue-bar span:hover {
+  opacity: 0.85;
+}

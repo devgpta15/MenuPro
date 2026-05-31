@@ -1,0 +1,155 @@
+/* ================================================
+   USER PROFILE DROPDOWN – SOFT INTERACTIVE THEME
+   ================================================ */
+
+:root {
+  --bg-page:        #fdf6ef;
+  --bg-panel:       #ffffff;
+  --bg-panel-soft:  rgba(255, 248, 243, 0.96);
+
+  --text-primary:   #e8603c;
+  --text-normal:    #3d2b1f;
+  --text-muted:     #9a7a6a;
+
+  --accent-primary: #e8603c;
+  --accent-warm:    #f4a261;
+
+  --shadow-soft:    0 10px 36px rgba(100, 50, 20, 0.12);
+  --shadow-glow:    0 0 24px rgba(232, 96, 60, 0.18);
+}
+
+/* ================================================
+   WRAPPER
+   ================================================ */
+.profile-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* ================================================
+   PROFILE BUTTON (NAVBAR)
+   ================================================ */
+.profile-btn {
+  background: linear-gradient(135deg, #e8603c, #f4a261);
+  color: #ffffff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 22px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.88rem;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 3px 12px rgba(232, 96, 60, 0.22);
+}
+
+.profile-btn:hover {
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 6px 22px rgba(232, 96, 60, 0.35);
+}
+
+.profile-btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* Avatar initial */
+.profile-btn .avatar-initial {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.78rem;
+}
+
+/* ================================================
+   DROPDOWN BOX
+   ================================================ */
+.profile-dropdown {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  background: var(--bg-panel);
+  min-width: 230px;
+  border-radius: 16px;
+  box-shadow: var(--shadow-soft);
+  padding: 14px;
+  z-index: 2000;
+  border: 1px solid rgba(232, 96, 60, 0.10);
+  animation: dropdownFade 0.20s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+@keyframes dropdownFade {
+  from { opacity: 0; transform: scale(0.94) translateY(-8px); }
+  to   { opacity: 1; transform: scale(1)    translateY(0);    }
+}
+
+/* Username */
+.profile-dropdown p {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-normal);
+}
+
+/* Email */
+.profile-dropdown .email {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-top: 3px;
+  word-break: break-all;
+  font-weight: 400;
+}
+
+/* Role pill */
+.profile-role-pill {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: rgba(232, 96, 60, 0.10);
+  color: var(--accent-primary);
+  border: 1px solid rgba(232, 96, 60, 0.20);
+}
+
+/* DIVIDER */
+.profile-dropdown hr {
+  margin: 12px 0;
+  border: none;
+  border-top: 1px solid rgba(232, 96, 60, 0.10);
+}
+
+/* ================================================
+   LOGOUT BUTTON
+   ================================================ */
+.logout-btn {
+  width: 100%;
+  background: none;
+  border: 1.5px solid rgba(232, 96, 60, 0.20);
+  color: var(--accent-primary);
+  font-weight: 600;
+  font-size: 0.86rem;
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: inherit;
+  text-align: center;
+  transition: all 0.22s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.logout-btn:hover {
+  background: rgba(232, 96, 60, 0.08);
+  border-color: rgba(232, 96, 60, 0.38);
+  transform: translateY(-1px);
+}

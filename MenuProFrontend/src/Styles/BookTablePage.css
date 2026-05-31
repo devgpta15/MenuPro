@@ -1,0 +1,142 @@
+/* ================================================
+   BOOK TABLE PAGE – PREMIUM INTERACTIVE LAYOUT
+   ================================================ */
+
+/* ================================================
+   PAGE WRAPPER
+   ================================================ */
+.book-table-page {
+  display: flex;
+  gap: 28px;
+  padding: 28px 40px 100px; /* bottom padding for floating cart button */
+  color: #3d2b1f;
+  align-items: flex-start;
+  background: #fdf6ef;
+  min-height: 100vh;
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ================================================
+   LEFT – MENU SECTION
+   ================================================ */
+.menu-section {
+  flex: 1;
+  min-width: 0;
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 22px;
+  border: 1px solid rgba(232, 96, 60, 0.09);
+  box-shadow: 0 4px 20px rgba(100, 50, 20, 0.07);
+  animation: fadeInLeft 0.45s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-18px); }
+  to   { opacity: 1; transform: translateX(0);     }
+}
+
+.menu-section h2 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #2d1b0e;
+  margin: 0 0 20px;
+  padding-bottom: 14px;
+  border-bottom: 2px solid rgba(232, 96, 60, 0.10);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ================================================
+   MENU LIST
+   ================================================ */
+.menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ================================================
+   RIGHT – BOOKING SECTION
+   ================================================ */
+.booking-section {
+  width: 340px;
+  flex-shrink: 0;
+  animation: fadeInRight 0.45s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(18px); }
+  to   { opacity: 1; transform: translateX(0);    }
+}
+
+/* ================================================
+   SAVING TOAST
+   ================================================ */
+.saving-toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: #ffffff;
+  border: 1.5px solid rgba(232, 96, 60, 0.18);
+  border-radius: 14px;
+  padding: 14px 20px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #2d1b0e;
+  box-shadow: 0 8px 28px rgba(100, 50, 20, 0.14);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 3000;
+  animation: slideUp 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+.saving-spinner {
+  width: 18px;
+  height: 18px;
+  border: 2.5px solid rgba(232, 96, 60, 0.20);
+  border-top-color: #e8603c;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ================================================
+   NO MENU STATE
+   ================================================ */
+.menu-section > p {
+  text-align: center;
+  color: #9a7a6a;
+  padding: 40px 0;
+  font-size: 0.96rem;
+}
+
+/* ================================================
+   MOBILE
+   ================================================ */
+@media (max-width: 768px) {
+  .book-table-page {
+    flex-direction: column;
+    padding: 16px 16px 120px;
+    gap: 20px;
+  }
+
+  .booking-section {
+    width: 100%;
+  }
+}

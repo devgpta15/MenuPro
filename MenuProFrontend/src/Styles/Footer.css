@@ -1,0 +1,142 @@
+/* ================================================
+   FOOTER – SOFT INTERACTIVE THEME
+   ================================================ */
+
+:root {
+  --bg-page:        #fdf6ef;
+  --bg-panel:       #fff8f3;
+  --bg-panel-soft:  rgba(255, 248, 243, 0.96);
+
+  --text-primary:   #e8603c;
+  --text-normal:    #3d2b1f;
+  --text-muted:     #9a7a6a;
+
+  --accent-primary: #e8603c;
+  --accent-warm:    #f4a261;
+  --accent-rating:  #f4a261;
+
+  --shadow-soft:    0 -4px 24px rgba(100, 50, 20, 0.07);
+}
+
+/* ================================================
+   FOOTER BASE
+   ================================================ */
+.footer {
+  background: var(--bg-panel);
+  color: var(--text-normal);
+  border-top: 1px solid rgba(232, 96, 60, 0.14);
+  box-shadow: var(--shadow-soft);
+  margin-top: auto;
+}
+
+/* ================================================
+   FOOTER CONTAINER
+   ================================================ */
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 40px 56px;
+  flex-wrap: wrap;
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ================================================
+   FOOTER SECTIONS
+   ================================================ */
+.footer-section {
+  max-width: 280px;
+  flex: 1;
+  min-width: 180px;
+}
+
+.footer-title {
+  color: var(--text-normal);
+  margin-bottom: 14px;
+  font-weight: 700;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-title::after {
+  content: '';
+  flex: 1;
+  height: 1.5px;
+  background: linear-gradient(90deg, rgba(232,96,60,0.25), transparent);
+  border-radius: 2px;
+}
+
+.footer-text {
+  color: var(--text-muted);
+  font-size: 0.86rem;
+  line-height: 1.7;
+}
+
+/* Brand logo in footer */
+.footer-brand {
+  font-size: 1.4rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #e8603c, #f4a261);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 10px;
+  display: block;
+}
+
+/* ================================================
+   FOOTER LINKS
+   ================================================ */
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  color: var(--text-muted);
+  margin-bottom: 10px;
+  cursor: pointer;
+  font-size: 0.86rem;
+  transition: all 0.22s cubic-bezier(0.34, 1.56, 0.64, 1);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.footer-links li:hover {
+  color: var(--accent-primary);
+  transform: translateX(5px);
+}
+
+/* ================================================
+   FOOTER BOTTOM
+   ================================================ */
+.footer-bottom {
+  text-align: center;
+  padding: 14px 20px;
+  border-top: 1px solid rgba(232, 96, 60, 0.10);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ================================================
+   MOBILE
+   ================================================ */
+@media (max-width: 600px) {
+  .footer-container {
+    padding: 28px 20px;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .footer-section {
+    max-width: 100%;
+  }
+}

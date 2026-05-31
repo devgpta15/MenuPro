@@ -1,0 +1,136 @@
+/* ================================================
+   ADMIN DASHBOARD – SOFT INTERACTIVE THEME
+   ================================================ */
+
+:root {
+  --bg-page:        #fdf6ef;
+  --bg-panel:       #ffffff;
+
+  --text-primary:   #e8603c;
+  --text-normal:    #3d2b1f;
+  --text-muted:     #9a7a6a;
+
+  --accent-primary: #e8603c;
+  --accent-warm:    #f4a261;
+  --accent-rating:  #f4a261;
+
+  --shadow-soft:    0 12px 40px rgba(100, 50, 20, 0.10);
+  --shadow-glow:    0 0 28px rgba(232, 96, 60, 0.18);
+}
+
+/* ================================================
+   PAGE
+   ================================================ */
+.admin-dashboard {
+  padding: 32px;
+  min-height: 100vh;
+  background: var(--bg-page);
+  color: var(--text-normal);
+  font-family: 'Plus Jakarta Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ================================================
+   TITLE
+   ================================================ */
+.admin-dashboard h1 {
+  margin-bottom: 32px;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text-normal);
+}
+
+/* ================================================
+   CARDS GRID
+   ================================================ */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 22px;
+}
+
+/* ================================================
+   CARD
+   ================================================ */
+.card {
+  background: var(--bg-panel);
+  padding: 28px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 4px 18px rgba(100, 50, 20, 0.07);
+  border: 1px solid rgba(232, 96, 60, 0.08);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  animation: fadeInUp 0.5s ease both;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+.card:nth-child(1) { animation-delay: 0.05s; }
+.card:nth-child(2) { animation-delay: 0.10s; }
+.card:nth-child(3) { animation-delay: 0.15s; }
+.card:nth-child(4) { animation-delay: 0.20s; }
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #e8603c, #f4a261);
+  border-radius: 20px 20px 0 0;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(100, 50, 20, 0.13);
+}
+
+/* ================================================
+   CARD CONTENT
+   ================================================ */
+.card h2 {
+  font-size: 0.84rem;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.card p {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--accent-primary);
+}
+
+/* ================================================
+   STATUS VARIANTS
+   ================================================ */
+.card.active {
+  border-top-color: #52b788;
+}
+.card.active::before {
+  background: linear-gradient(90deg, #52b788, #74c69d);
+}
+.card.active p {
+  color: #2d7a5e;
+}
+
+.card.inactive {
+  border-top-color: rgba(231, 111, 81, 0.50);
+}
+.card.inactive::before {
+  background: linear-gradient(90deg, #e76f51, #f4a261);
+}
+.card.inactive p {
+  color: #b84024;
+}

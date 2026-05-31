@@ -1,0 +1,217 @@
+/* ================================================
+   ADMIN MANAGERS – SOFT INTERACTIVE THEME
+   ================================================ */
+
+:root {
+  --bg-page:        #fdf6ef;
+  --bg-panel:       #ffffff;
+  --bg-panel-soft:  rgba(255, 248, 243, 0.92);
+
+  --text-primary:   #e8603c;
+  --text-normal:    #3d2b1f;
+  --text-muted:     #9a7a6a;
+
+  --accent-primary: #e8603c;
+  --accent-warm:    #f4a261;
+  --accent-rating:  #f4a261;
+
+  --shadow-soft:    0 12px 40px rgba(100, 50, 20, 0.10);
+  --shadow-glow:    0 0 28px rgba(232, 96, 60, 0.18);
+}
+
+/* ================================================
+   PAGE
+   ================================================ */
+.admin-managers {
+  padding: 28px;
+  background: var(--bg-page);
+  color: var(--text-normal);
+  min-height: 100vh;
+  font-family: 'Plus Jakarta Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  max-width: 1100px;
+  margin: 0 auto;
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.admin-managers h1 {
+  margin: 0 0 22px 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text-normal);
+}
+
+.admin-managers p {
+  margin: 10px 0;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* ================================================
+   FORM CARD
+   ================================================ */
+.add-manager-form {
+  background: var(--bg-panel);
+  border: 1px solid rgba(232, 96, 60, 0.10);
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 4px 18px rgba(100, 50, 20, 0.07);
+  margin-bottom: 24px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.add-manager-form h3 {
+  grid-column: 1 / -1;
+  margin: 0 0 6px 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-normal);
+}
+
+.add-manager-form button {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 800px) {
+  .add-manager-form {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Inputs/select inside form */
+.add-manager-form input,
+.add-manager-form select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 11px 14px;
+  border-radius: 11px;
+  border: 1.5px solid rgba(232, 96, 60, 0.16);
+  background: #fdf6ef;
+  color: var(--text-normal);
+  font-size: 0.9rem;
+  font-family: inherit;
+  outline: none;
+  transition: all 0.22s ease;
+}
+
+.add-manager-form input::placeholder {
+  color: var(--text-muted);
+}
+
+.add-manager-form input:focus,
+.add-manager-form select:focus {
+  background: #ffffff;
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px rgba(232, 96, 60, 0.12);
+}
+
+/* Submit button */
+.add-manager-form button[type="submit"] {
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 0.92rem;
+  font-family: inherit;
+  color: #ffffff;
+  background: linear-gradient(135deg, #e8603c, #f4a261);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 4px 14px rgba(232, 96, 60, 0.22);
+}
+
+.add-manager-form button[type="submit"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(232, 96, 60, 0.36);
+}
+
+/* ================================================
+   TABLE
+   ================================================ */
+.managers-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: var(--bg-panel);
+  color: var(--text-normal);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(100, 50, 20, 0.07);
+  border: 1px solid rgba(232, 96, 60, 0.09);
+}
+
+.managers-table thead {
+  background: rgba(232, 96, 60, 0.04);
+}
+
+.managers-table th {
+  padding: 13px 14px;
+  text-align: left;
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  font-weight: 700;
+  border-bottom: 1px solid rgba(232, 96, 60, 0.10);
+}
+
+.managers-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid rgba(232, 96, 60, 0.07);
+  font-size: 0.88rem;
+  color: var(--text-normal);
+}
+
+.managers-table tbody tr {
+  transition: background 0.18s ease;
+}
+
+.managers-table tbody tr:hover {
+  background: rgba(232, 96, 60, 0.04);
+}
+
+.managers-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Action button */
+.managers-table button {
+  padding: 7px 12px;
+  border-radius: 9px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 0.8rem;
+  font-family: inherit;
+  border: 1.5px solid rgba(232, 96, 60, 0.22);
+  background: rgba(232, 96, 60, 0.07);
+  color: var(--accent-primary);
+  transition: all 0.22s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.managers-table button:hover {
+  background: linear-gradient(135deg, #e8603c, #f4a261);
+  color: #ffffff;
+  border-color: transparent;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(232, 96, 60, 0.28);
+}
+
+/* Mobile */
+@media (max-width: 760px) {
+  .managers-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .managers-table th,
+  .managers-table td {
+    min-width: 130px;
+  }
+}

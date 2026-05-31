@@ -1,0 +1,449 @@
+/* ================================================
+   RESTAURANT DETAILS – SOFT INTERACTIVE THEME
+   ================================================ */
+
+:root {
+  --bg-page:        #fdf6ef;
+  --bg-panel:       #ffffff;
+  --bg-panel-soft:  rgba(255, 248, 243, 0.92);
+
+  --text-primary:   #e8603c;
+  --text-normal:    #3d2b1f;
+  --text-muted:     #9a7a6a;
+
+  --accent-primary: #e8603c;
+  --accent-warm:    #f4a261;
+  --accent-rating:  #f4a261;
+
+  --shadow-soft:    0 12px 40px rgba(100, 50, 20, 0.10);
+  --shadow-glow:    0 0 28px rgba(232, 96, 60, 0.18);
+}
+
+/* ================================================
+   PAGE
+   ================================================ */
+.restaurant-details-page {
+  padding: 28px 44px;
+  color: var(--text-normal);
+  background: var(--bg-page);
+  min-height: 100vh;
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ================================================
+   HEADER
+   ================================================ */
+.restaurant-header {
+  display: flex;
+  gap: 32px;
+  margin-bottom: 36px;
+  animation: fadeInUp 0.5s ease both;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+.restaurant-header img {
+  width: 340px;
+  height: 230px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.restaurant-header img:hover {
+  transform: scale(1.02);
+}
+
+.header-info h1 {
+  margin: 0 0 8px;
+  font-size: 2rem;
+  color: var(--text-normal);
+}
+
+.header-info p {
+  margin: 6px 0;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 8px;
+  font-weight: 700;
+  color: #b5621c;
+  background: rgba(244, 162, 97, 0.14);
+  padding: 5px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(244, 162, 97, 0.28);
+  font-size: 0.9rem;
+}
+
+/* ================================================
+   ACTION BUTTONS
+   ================================================ */
+.action-buttons {
+  margin-top: 18px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.action-buttons button {
+  background: transparent;
+  border: 1.5px solid rgba(232, 96, 60, 0.28);
+  color: var(--accent-primary);
+  padding: 8px 18px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.88rem;
+  font-family: inherit;
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.action-buttons button:hover {
+  background: linear-gradient(135deg, #e8603c, #f4a261);
+  color: #ffffff;
+  border-color: transparent;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow);
+}
+
+/* ================================================
+   TABS
+   ================================================ */
+.tabs-bar {
+  position: sticky;
+  top: 68px;
+  background: rgba(253, 246, 239, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex;
+  gap: 6px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(232, 96, 60, 0.12);
+  z-index: 10;
+}
+
+.tabs-bar button {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: 0.88rem;
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 10px;
+  transition: all 0.22s cubic-bezier(0.34, 1.56, 0.64, 1);
+  font-family: inherit;
+}
+
+.tabs-bar button:hover {
+  background: rgba(232, 96, 60, 0.08);
+  color: var(--accent-primary);
+}
+
+.tabs-bar button.active {
+  color: var(--accent-primary);
+  background: rgba(232, 96, 60, 0.10);
+  font-weight: 700;
+}
+
+/* ================================================
+   BODY LAYOUT
+   ================================================ */
+.restaurant-body {
+  display: flex;
+  gap: 36px;
+  margin-top: 32px;
+}
+
+/* ================================================
+   LEFT CONTENT
+   ================================================ */
+.left-content {
+  flex: 3;
+  background: var(--bg-panel);
+  padding: 24px;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(100, 50, 20, 0.07);
+  border: 1px solid rgba(232, 96, 60, 0.08);
+  animation: fadeIn 0.4s ease;
+}
+
+/* ================================================
+   ORDER ONLINE
+   ================================================ */
+.order-online {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.order-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  align-items: flex-start;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(232, 96, 60, 0.12);
+}
+
+.order-heading h3 {
+  margin: 0;
+  color: #2d1b0e;
+  font-size: 1.45rem;
+  line-height: 1.2;
+}
+
+.order-heading p {
+  margin: 6px 0 0;
+  color: var(--text-muted);
+  font-size: 0.92rem;
+}
+
+.order-book-btn,
+.order-add-btn {
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 800;
+  transition: all 0.22s ease;
+}
+
+.order-book-btn {
+  flex-shrink: 0;
+  padding: 12px 18px;
+  border-radius: 12px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #e8603c, #f4a261);
+  box-shadow: 0 6px 18px rgba(232, 96, 60, 0.22);
+}
+
+.order-list {
+  display: grid;
+  gap: 14px;
+}
+
+.order-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  min-height: 96px;
+  padding: 18px;
+  border-radius: 16px;
+  background: linear-gradient(180deg, #ffffff 0%, #fffaf6 100%);
+  border: 1px solid rgba(232, 96, 60, 0.12);
+  box-shadow: 0 8px 24px rgba(100, 50, 20, 0.06);
+}
+
+.order-item-main {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  min-width: 0;
+}
+
+.order-thumb {
+  position: relative;
+  width: 82px;
+  height: 82px;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #f8e7dc;
+  flex-shrink: 0;
+}
+
+.order-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.veg-dot {
+  position: absolute;
+  top: 7px;
+  left: 7px;
+  width: 18px;
+  height: 18px;
+  display: grid;
+  place-items: center;
+  border: 1.5px solid #4bb57a;
+  border-radius: 5px;
+  flex-shrink: 0;
+  background: #ffffff;
+}
+
+.veg-dot span {
+  width: 8px;
+  height: 8px;
+  background: #4bb57a;
+  border-radius: 50%;
+}
+
+.order-item h4 {
+  margin: 0;
+  color: #2d1b0e;
+  font-size: 1rem;
+  line-height: 1.35;
+}
+
+.order-item p {
+  margin: 8px 0 0;
+  color: var(--accent-primary);
+  font-weight: 800;
+}
+
+.order-add-btn {
+  min-width: 102px;
+  padding: 10px 16px;
+  border-radius: 12px;
+  color: var(--accent-primary);
+  background: #ffffff;
+  border: 1.5px solid rgba(232, 96, 60, 0.28);
+}
+
+.order-add-btn:hover:not(:disabled),
+.order-book-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow);
+}
+
+.order-add-btn:disabled {
+  cursor: not-allowed;
+  color: var(--text-muted);
+  border-color: rgba(154, 122, 106, 0.24);
+  background: #f8f0ea;
+}
+
+.order-empty {
+  padding: 42px 20px;
+  text-align: center;
+  color: var(--text-muted);
+  background: var(--bg-panel-soft);
+  border: 1px dashed rgba(232, 96, 60, 0.22);
+  border-radius: 16px;
+}
+
+/* ================================================
+   RIGHT SIDEBAR
+   ================================================ */
+.booking-sidebar {
+  flex: 1;
+  height: fit-content;
+  position: sticky;
+  top: 120px;
+  background: var(--bg-panel);
+  padding: 24px;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(100, 50, 20, 0.07);
+  border: 1px solid rgba(232, 96, 60, 0.10);
+  animation: slideInRight 0.45s ease both;
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(20px); }
+  to   { opacity: 1; transform: translateX(0);    }
+}
+
+.booking-sidebar h3 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  color: var(--text-normal);
+  font-size: 1.05rem;
+}
+
+/* ================================================
+   BOOK BUTTON
+   ================================================ */
+.book-btn {
+  width: 100%;
+  margin-top: 18px;
+  padding: 13px;
+  background: linear-gradient(135deg, #e8603c, #f4a261);
+  border: none;
+  border-radius: 13px;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.96rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 6px 20px rgba(232, 96, 60, 0.24);
+  font-family: inherit;
+}
+
+.book-btn:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 10px 30px rgba(232, 96, 60, 0.38);
+}
+
+.book-btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* ================================================
+   LOADING
+   ================================================ */
+.loading {
+  padding: 60px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+/* ================================================
+   MOBILE
+   ================================================ */
+@media (max-width: 768px) {
+  .restaurant-details-page {
+    padding: 16px;
+  }
+
+  .restaurant-header {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .restaurant-header img {
+    width: 100%;
+    height: 200px;
+  }
+
+  .restaurant-body {
+    flex-direction: column;
+  }
+
+  .booking-sidebar {
+    position: static;
+  }
+
+  .order-heading,
+  .order-item {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .order-book-btn,
+  .order-add-btn {
+    width: 100%;
+  }
+
+  .order-thumb {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+}
